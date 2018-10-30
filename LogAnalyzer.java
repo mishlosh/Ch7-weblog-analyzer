@@ -54,6 +54,9 @@ public class LogAnalyzer
         }
     }
     
+    /** 
+     * Analyze the daily access data from the log file.
+     */
     public void analyzeDailyData()
     {
         while(reader.hasNext()) {
@@ -63,6 +66,9 @@ public class LogAnalyzer
         }
     }
     
+    /**
+     * Analyze the monthly data from the log file.
+     */
     public void analyzeMonthlyData()
     {
         while(reader.hasNext()) {
@@ -115,6 +121,10 @@ public class LogAnalyzer
         return busiest;
     }
     
+    /**
+     * Returns the quietest day in the log
+     * @return the quietest day
+     */
     public int quietestDay(){
         int quietest = 1;
         for (int c=2 ; c<32 ; c++){
@@ -125,7 +135,10 @@ public class LogAnalyzer
         return quietest;
     }
     
-    
+    /**
+     * Returns the busiest day in the log
+     * @return the busiest day
+     */
     public int busiestDay(){
         int busiest = 1;
         for (int c=2 ; c<32 ; c++){
@@ -136,7 +149,10 @@ public class LogAnalyzer
         return busiest;
     }
     
-    
+    /**
+     * Returns the quietest month in the log
+     * @return the quietest month
+     */
     public int quietestMonth(){
         int quietest = 1;
         for (int c=2 ; c<13 ; c++){
@@ -147,7 +163,10 @@ public class LogAnalyzer
         return quietest;
     }
     
-    
+    /**
+     * Returns the busiest month in the log
+     * @return the busiest month
+     */
     public int busiestMonth(){
         int busiest = 1;
         for (int c=2 ; c<13 ; c++){
@@ -185,13 +204,27 @@ public class LogAnalyzer
         }
     }
     
-    
+    /**
+     * Print the total accesses per month
+     */
     public void totalAccessesPerMonth()
     {
         System.out.println("Month : Count");
         for(int month = 1; month < 13 ; month++)
         {
             System.out.println(month + " : " + monthCounts[month]);
+        }
+    }
+    
+    /**
+     * print the average accesses per month
+     */
+    public void averageAccessesPerMonth()
+    {
+        System.out.println("Month : Average");
+        for(int month = 1; month < 13 ; month++)
+        {
+            System.out.println(month + " : " + (monthCounts[month]/31));
         }
     }
     
